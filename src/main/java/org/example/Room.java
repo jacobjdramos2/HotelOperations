@@ -3,9 +3,9 @@ package org.example;
 public class Room {
     private int numberOfBeds;
     private double price;
-    boolean isOccupied;
-    boolean isDirty;
-    boolean isAvailable;
+    boolean isOccupied = false;
+    boolean isDirty = false;
+    boolean isAvailable = true;
 
     public Room(int numberOfBeds, double price, boolean isOccupied, boolean isDirty, boolean isAvailable) {
         this.numberOfBeds = numberOfBeds;
@@ -13,6 +13,19 @@ public class Room {
         this.isOccupied = isOccupied;
         this.isDirty = isDirty;
         this.isAvailable = isAvailable;
+    }
+
+    public void checkIn() {
+        isOccupied = true;
+    }
+
+    public void checkout() {
+        cleanroom();
+        isOccupied = false;
+    }
+
+    public void cleanroom() {
+        System.out.println("Cleaning room...");
     }
 
     public int getNumberOfBeds() {

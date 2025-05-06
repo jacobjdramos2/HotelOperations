@@ -15,6 +15,14 @@ public class Employee {
         this.hoursWorked = hoursWorked;
     }
 
+    public void punchIn(double time) {
+        System.out.println(name + "'s time has started at " + time);
+    }
+
+    public void punchOut(double time) {
+        System.out.println(name + "'s time has ended at " + time);
+    }
+
     public double getTotalPay(){
         return 0;
     }
